@@ -113,3 +113,27 @@ button {
     color: #6c757d;
     font-size: 18px;
 }
+ .edit-input{
+flex:1;
+padding: 5px;
+border: 2px solid #667eea
+border-radius 4px;
+font-size: 16px;
+}
+ .actions {
+display:flex;
+gap: 5px ;
+
+} 
+.edit-btn:hover{
+background: #e0a800;
+}
+.save_btn{
+background: #28a745;
+color:white;
+padding: 8px 15px;
+font-size: 14px;
+}
+.save-btn:hover{
+background: #1e7e34;}
+
