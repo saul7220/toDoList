@@ -29,24 +29,30 @@ async function loadTodos() {
 // Función para mostrar las tareas en el HTML
 function displayTodos(todos) {
     const todoList = document.getElementById('todoList');
-    
-    if (todos.length === 0) {
-        todoList.innerHTML = '<div class="empty-state">No hay tareas. ¡Agrega una nueva!</div>';
-        return;
-    }
-    
-    todoList.innerHTML = todos.map(todo => `
-        <div class="todo-item">
-            <span class="todo-text">${todo.title}</span>
-            <button class="delete-btn" onclick="deleteTodo(${todo.id})">
-                Eliminar
-            </button>
-        </div>
-    `).join('');
+     todoList.innerHTML = todos.map(todo =>`
+     <div class="todo-item" id="todo-${todo.id}">
+     <span 
+     class="todo-text"
+     id="text-${todo.id}"
+     ondbclick="enableEdit(${todo.id},
+        '${todo.title.replace(/'/g, "\\'")}')"
+     >
+     ${todo.title}
+     </span>
+     <div class="actions">
+     <button class="edit-btn" onclick="enableEdit(${todo.id}, '${todo.title.replace(/'/g, "\\'")}')">
+     Editar
+     </button>
+     <button class="delete-btn" onclick="deleteTodo(${todo.id})">
+     Eliminar
+     </button>
+     </div>
+     </div>
+   `).join('');
 }
 
 // Función para crear una nueva tarea
-async function createTodo() {
+         async function createTodo() {
     const input = document.getElementById('todoInput');
     const title = input.value.trim();
     
@@ -94,4 +100,3 @@ async function deleteTodo(id) {
     }
 }
 
-//Fin archivo script
