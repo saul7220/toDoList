@@ -125,7 +125,14 @@ display:flex;
 gap: 5px ;
 
 } 
-.edit-btn:hover{
+.edit-btn {
+    background: #ffc107;
+    color: #333;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.edit-btn:hover { 
 background: #e0a800;
 }
 .save_btn{
